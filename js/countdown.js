@@ -2,8 +2,8 @@
         window.setTimeout("show_date_time()", 1000);
         today = new Date();
         nowyear = today.getFullYear();
-        gaokaoDay = new Date(nowyear, 5, 7, 9, 0, 0);//Õâ¸öÈÕÆÚÊÇ¸ß¿¼Ê±¼ä(µ±Ç°Äê·İ,6ÔÂ,7ÈÕ,9µã,0·Ö,0Ãë)
-        zhongkaoDay = new Date(nowyear, 5, 14, 9, 0, 0);//Õâ¸öÈÕÆÚÊÇÖĞ¿¼Ê±¼ä(µ±Ç°Äê·İ,6ÔÂ,14ÈÕ,9µã,0·Ö,0Ãë)
+        gaokaoDay = new Date(nowyear, 5, 7, 9, 0, 0);//è¿™ä¸ªæ—¥æœŸæ˜¯é«˜è€ƒæ—¶é—´(å½“å‰å¹´ä»½,6æœˆ,7æ—¥,9ç‚¹,0åˆ†,0ç§’)
+        zhongkaoDay = new Date(nowyear, 5, 14, 9, 0, 0);//è¿™ä¸ªæ—¥æœŸæ˜¯ä¸­è€ƒæ—¶é—´(å½“å‰å¹´ä»½,6æœˆ,14æ—¥,9ç‚¹,0åˆ†,0ç§’)
         gaokaotimeold = (gaokaoDay.getTime() - today.getTime());
         zhongkaotimeold = (zhongkaoDay.getTime() - today.getTime());
         gaokaosectimeold = gaokaotimeold / 1000;
@@ -25,34 +25,34 @@
         zhongkaominsold = Math.floor((e_zhongkaohrsold - zhongkaohrsold) * 60);
         gaokaoseconds = Math.floor((e_gaokaominsold - gaokaominsold) * 60);
         zhongkaoseconds = Math.floor((e_zhongkaominsold - zhongkaominsold) * 60);
-        if (zhongkaosectimeold <= -374400)//ÖĞ¿¼½áÊøºóÈıÌìÈ¡ÏûËùÓĞÏÔÊ¾
+        if (zhongkaosectimeold <= -374400)//ä¸­è€ƒç»“æŸåä¸‰å¤©å–æ¶ˆæ‰€æœ‰æ˜¾ç¤º
         {
             gkcountdown.innerHTML = "";
-        } else if (gaokaosectimeold <= -374400)//¸ß½áÊøºóÈıÌì»Ö¸´È¡Ïû¸ß¿¼ÏÔÊ¾
+        } else if (gaokaosectimeold <= -374400)//é«˜ç»“æŸåä¸‰å¤©æ¢å¤å–æ¶ˆé«˜è€ƒæ˜¾ç¤º
         {
             gkcountdown.innerHTML = "<div class=gkdjs1></div>";
         } else if (gaokaosectimeold <= -115200) {
-            gkcountdown.innerHTML = "<div class=gkdjs><font color=#f8c8a4>¸ß¿¼ÒÑ½áÊø</font><br/>Ô¤×£Í¬Ñ§ÃÇ½ğ°ñÌâÃû£¡</div>";
+            gkcountdown.innerHTML = "<div class=gkdjs><font color=#f8c8a4>é«˜è€ƒå·²ç»“æŸ</font><br/>é¢„ç¥åŒå­¦ä»¬é‡‘æ¦œé¢˜åï¼</div>";
         } else if (gaokaosectimeold <= 0) {
-            gkcountdown.innerHTML = "<div class=gkdjs><font color=#f8c8a4>¸ß¿¼½øĞĞÖĞ</font><br/>¸÷Î»Í¬Ñ§¼ÓÓÍ£¡</div>";
-        } else if (gaokaosectimeold <= 8640000)//¾àÀë¸ß¿¼100Ìì¿ªÊ¼ÏÔÊ¾µ¹¼ÆÊ±
+            gkcountdown.innerHTML = "<div class=gkdjs><font color=#f8c8a4>é«˜è€ƒè¿›è¡Œä¸­</font><br/>å„ä½åŒå­¦åŠ æ²¹ï¼</div>";
+        } else if (gaokaosectimeold <= 8640000)//è·ç¦»é«˜è€ƒ100å¤©å¼€å§‹æ˜¾ç¤ºå€’è®¡æ—¶
         {
-            gkcountdown.innerHTML = "<div class=gkdjs><font>¾àÀë¸ß¿¼</font><font class=sz>" + gaokaodaysold + "</font><font>Ìì</font><br/>" + gaokaohrsold + "Ğ¡Ê±" + gaokaominsold + "·Ö" + gaokaoseconds + "Ãë" + "</div>";
-        } else if (gaokaosectimeold >= 8640000)//¾àÀë¸ß¿¼´óÓÚ100ÌìÈ¡ÏûÏÔÊ¾
+            gkcountdown.innerHTML = "<div class=gkdjs><font>è·ç¦»é«˜è€ƒ</font><font class=sz>" + gaokaodaysold + "</font><font>å¤©</font><br/>" + gaokaohrsold + "å°æ—¶" + gaokaominsold + "åˆ†" + gaokaoseconds + "ç§’" + "</div>";
+        } else if (gaokaosectimeold >= 8640000)//è·ç¦»é«˜è€ƒå¤§äº100å¤©å–æ¶ˆæ˜¾ç¤º
         {
             gkcountdown.innerHTML = "";
         }
-        if (zhongkaosectimeold <= -374400)//ÖĞ¿¼½áÊøºóÈıÌì»Ö¸´¿Õ°×ÏÔÊ¾
+        if (zhongkaosectimeold <= -374400)//ä¸­è€ƒç»“æŸåä¸‰å¤©æ¢å¤ç©ºç™½æ˜¾ç¤º
         {
             zkcountdown.innerHTML = "";
         } else if (zhongkaosectimeold <= -115200) {
-            zkcountdown.innerHTML = "<div class=zkdjs><font color=#f8c8a4>ÖĞ¿¼ÒÑ½áÊø</font><br/>Ô¤×£Í¬Ñ§ÃÇ½ğ°ñÌâÃû£¡</div>";
+            zkcountdown.innerHTML = "<div class=zkdjs><font color=#f8c8a4>ä¸­è€ƒå·²ç»“æŸ</font><br/>é¢„ç¥åŒå­¦ä»¬é‡‘æ¦œé¢˜åï¼</div>";
         } else if (zhongkaosectimeold <= 0) {
-            zkcountdown.innerHTML = "<div class=zkdjs><font color=#f8c8a4>ÖĞ¿¼½øĞĞÖĞ</font><br/>¸÷Î»Í¬Ñ§¼ÓÓÍ£¡</div>";
-        } else if (gaokaosectimeold <= 8640000)//¾àÀë¸ß¿¼100Ìì¿ªÊ¼ÏÔÊ¾µ¹¼ÆÊ±
+            zkcountdown.innerHTML = "<div class=zkdjs><font color=#f8c8a4>ä¸­è€ƒè¿›è¡Œä¸­</font><br/>å„ä½åŒå­¦åŠ æ²¹ï¼</div>";
+        } else if (gaokaosectimeold <= 8640000)//è·ç¦»é«˜è€ƒ100å¤©å¼€å§‹æ˜¾ç¤ºå€’è®¡æ—¶
         {
-            zkcountdown.innerHTML = "<div class=zkdjs><font>¾àÀëÖĞ¿¼</font><font class=sz>" + zhongkaodaysold + "</font><font>Ìì</font><br/>" + zhongkaohrsold + "Ğ¡Ê±" + zhongkaominsold + "·Ö" + zhongkaoseconds + "Ãë" + "</div>";
-        } else if (gaokaosectimeold >= 8640000)//¾àÀë¸ß¿¼´óÓÚ100ÌìÈ¡ÏûÏÔÊ¾
+            zkcountdown.innerHTML = "<div class=zkdjs><font>è·ç¦»ä¸­è€ƒ</font><font class=sz>" + zhongkaodaysold + "</font><font>å¤©</font><br/>" + zhongkaohrsold + "å°æ—¶" + zhongkaominsold + "åˆ†" + zhongkaoseconds + "ç§’" + "</div>";
+        } else if (gaokaosectimeold >= 8640000)//è·ç¦»é«˜è€ƒå¤§äº100å¤©å–æ¶ˆæ˜¾ç¤º
         {
             zkcountdown.innerHTML = "";
         }
