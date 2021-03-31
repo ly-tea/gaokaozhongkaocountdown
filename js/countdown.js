@@ -33,7 +33,7 @@ if (zhongkaosectimeold<=-226800)//中考结束后两天取消所有显示
 {gkcountdown.innerHTML="<div class=gkdjs><font color=#f8c8a4>高考已结束</font><br/>预祝同学们金榜题名！</div>" ;
 } else if (gaokaosectimeold<=0)
 {gkcountdown.innerHTML="<div class=gkdjs><font color=#f8c8a4>高考进行中</font><br/>各位同学加油！</div>" ;
-}else if (gaokaosectimeold<=13737600)//距离高考159天开始显示倒计时
+}else if (gaokaosectimeold<=8640000)//距离高考100天开始显示倒计时
 {gkcountdown.innerHTML="<div class=gkdjs><font>距离高考</font><font class=sz>"+gaokaodaysold+"</font><font>天</font><br/>"+gaokaohrsold+"小时"+gaokaominsold+"分"+gaokaoseconds+"秒"+"</div>" ; 
 }
 if (zhongkaosectimeold<=-226800)//中考结束后两天恢复空白显示
@@ -42,7 +42,7 @@ if (zhongkaosectimeold<=-226800)//中考结束后两天恢复空白显示
 {zkcountdown.innerHTML="<div class=zkdjs><font color=#f8c8a4>中考已结束</font><br/>预祝同学们金榜题名！</div>" ;
 } else if (zhongkaosectimeold<=0)
 {zkcountdown.innerHTML="<div class=zkdjs><font color=#f8c8a4>中考进行中</font><br/>各位同学加油！</div>" ;
-}else if (gaokaosectimeold<=13737600)//距离高考159天开始显示倒计时
+}else if (gaokaosectimeold<=8640000)//距离高考100天开始显示倒计时
 {zkcountdown.innerHTML="<div class=zkdjs><font>距离中考</font><font class=sz>"+zhongkaodaysold+"</font><font>天</font><br/>"+zhongkaohrsold+"小时"+zhongkaominsold+"分"+zhongkaoseconds+"秒"+"</div>" ; 
 }
 }
